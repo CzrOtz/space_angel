@@ -70,10 +70,12 @@ while is_runnign:
     if platform_B.is_in_contact_with(enemy_1_4):
         if platform_B.hero_in_contact(hero):
             enemy_1_4.move_towards(hero)         
-
+ 
     if platform_C.is_in_contact_with(enemy_2_2):
         if platform_C.hero_in_contact(hero):
             enemy_2_2.move_towards(hero)
+
+    
 
 
     if move_forward == True:
@@ -94,6 +96,7 @@ while is_runnign:
             enemy_1_3.keep_in_platform()
             enemy_1_4.keep_in_platform()
             enemy_2_2.keep_in_platform()
+            enemy_2_3.keep_in_platform()
             #lock the enemy to the plaform
         else:
             hero.hero_move_forward()
@@ -106,6 +109,8 @@ while is_runnign:
         flame_obj.position_xf = hero.position_x + 70 
         flame_obj.position_yf = hero.position_y + 70 
 
+
+#################shoot and enemy hit logic###################
     if shoot:
         flame_obj.shoot_flame()
         if flame_obj.position_xf > WINDOW_WIDTH:
@@ -113,10 +118,19 @@ while is_runnign:
         
         for enemies in all_enemies:
             if flame_obj.flame_enemy_collide(enemies):
-                enemies.position_x += 20
+                enemies.position_x += 15
+                enemies.health -= 2.5
+                print(enemy_1_2.health, ' first enemy health')
+                print(enemy_1_3.health, ' second enemy health')
+                if enemies.health <= 0:
+                    enemies.position_y += WINDOW_HEIGHT
+                
 
-          
 
+   
+
+        
+ 
 ################################################################################################################
 #Jump and fall logic
 
@@ -157,6 +171,12 @@ while is_runnign:
     
 
 ##############################################################################################################
+
+
+
+
+
+
        
     screen.blit(background, (0,0))
     # background_0.load_background(screen)
@@ -173,6 +193,7 @@ while is_runnign:
     enemy_3.load_enemy(screen)
     enemy_1_4.load_enemy(screen)
     enemy_2_2.load_enemy(screen)
+    enemy_2_3.load_enemy(screen)
     # enemy_4.load_enemy(screen) 
     enemy_5.load_enemy(screen)
     flame_obj.load_flame(screen)

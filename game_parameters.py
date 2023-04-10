@@ -15,6 +15,7 @@ fps = 30
 
 can_jump = True
 
+enemies_down = 0
 
 #to modify these, you need to do that in the method
 #they can be tracked directly but moddified with the methods
@@ -125,7 +126,8 @@ enemy_properties = {
         "image": "images/enemy0.png",
         "size" : (100, 100),
         "position_x" : WINDOW_WIDTH // 1,
-        "position_y" :  WINDOW_HEIGHT - 200
+        "position_y" :  WINDOW_HEIGHT - 200,
+        "health": 15
     },
     "enemy1": {
         "image": "images/enemy1.png",
@@ -133,7 +135,8 @@ enemy_properties = {
         "position_x" : WINDOW_WIDTH + 600,
         "position_y": WINDOW_HEIGHT - 200,
         "rect_width": 100,
-        "rect_height": 100
+        "rect_height": 100,
+        "health": 50
     },
     "enemy2": {
         "image": "images/enemy2.png",
@@ -141,7 +144,8 @@ enemy_properties = {
         "position_x": WINDOW_WIDTH + WINDOW_WIDTH,
         "position_y": WINDOW_HEIGHT - 200,
         "rect_width": 100,
-        "rect_height": 100 
+        "rect_height": 100,
+        "health": 100 
     },
 
     "enemy4": {
@@ -150,7 +154,8 @@ enemy_properties = {
         "position_x": 500,
         "position_y": WINDOW_HEIGHT - 200,
         "rect_width": 100,
-        "rect_height": 100 
+        "rect_height": 100,
+        "health": 50 
     },
 
     "enemy5": {
@@ -159,7 +164,8 @@ enemy_properties = {
         "position_x": 600,
         "position_y": WINDOW_HEIGHT - 200,
         "rect_width": 100,
-        "rect_height": 100
+        "rect_height": 100,
+        "health": 1000
 
     }
 

@@ -3,7 +3,7 @@ import pygame
 
 
 class Enemy:
-    def __init__(self, image_source, size_of_image, position_x, position_y, rect_width, rect_heigh):
+    def __init__(self, image_source, size_of_image, position_x, position_y, rect_width, rect_heigh, health):
         self.image_source = image_source
         self.size_of_image = size_of_image
         self.position_x = position_x
@@ -14,6 +14,7 @@ class Enemy:
         self.flame = None
         self.startign_position = 0
         self.hero = None
+        self.health = health
         
 
 

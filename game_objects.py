@@ -148,7 +148,8 @@ enemy_1 = Enemy(
           enemy_properties["enemy0"]["position_x"],
            enemy_properties["enemy0"]["position_y"],
             enemy_properties["enemy0"]["size"][0],
-             enemy_properties["enemy0"]["size"][1]
+             enemy_properties["enemy0"]["size"][1],
+             enemy_properties["enemy0"]["health"]
              )
 
 enemy_1_2 = Enemy(
@@ -157,7 +158,8 @@ enemy_1_2 = Enemy(
           platform_A.position_x,
            platform_A.position_y - 70,
             enemy_properties["enemy0"]["size"][0],
-             enemy_properties["enemy0"]["size"][1]
+             enemy_properties["enemy0"]["size"][1],
+             enemy_properties["enemy0"]["health"]
              )
 
 enemy_1_3 = Enemy(
@@ -166,7 +168,8 @@ enemy_1_3 = Enemy(
           platform_B.position_x,
            platform_B.position_y - 70, 
             enemy_properties["enemy0"]["size"][0],
-             enemy_properties["enemy0"]["size"][1]
+             enemy_properties["enemy0"]["size"][1],
+             enemy_properties["enemy0"]["health"]
              )
 
 enemy_1_4 = Enemy(
@@ -175,7 +178,8 @@ enemy_1_4 = Enemy(
           platform_B.position_x + 30,
            platform_B.position_y - 80,
             enemy_properties["enemy0"]["size"][0],
-             enemy_properties["enemy0"]["size"][1]
+             enemy_properties["enemy0"]["size"][1],
+             enemy_properties["enemy0"]["health"]
              )
 
 
@@ -186,7 +190,8 @@ enemy_2 = Enemy(
           enemy_properties["enemy1"]["position_x"],
            enemy_properties["enemy1"]["position_y"],
             enemy_properties["enemy1"]["size"][0],
-            enemy_properties["enemy1"]["size"][1]
+            enemy_properties["enemy1"]["size"][1],
+            enemy_properties["enemy1"]["health"]
             )
 
 enemy_2_1 = Enemy(
@@ -195,7 +200,8 @@ enemy_2_1 = Enemy(
           enemy_properties["enemy1"]["position_x"],
            enemy_properties["enemy1"]["position_y"],
             enemy_properties["enemy1"]["size"][0],
-            enemy_properties["enemy1"]["size"][1]
+            enemy_properties["enemy1"]["size"][1],
+            enemy_properties["enemy1"]["health"]
             )
 
 enemy_2_2 = Enemy(
@@ -204,16 +210,18 @@ enemy_2_2 = Enemy(
           platform_C.position_x + 30,
            platform_C.position_y - 150,
             enemy_properties["enemy1"]["size"][0],
-            enemy_properties["enemy1"]["size"][1]
+            enemy_properties["enemy1"]["size"][1],
+            enemy_properties["enemy1"]["health"]
             )
 
 enemy_2_3 = Enemy(
         enemy_properties["enemy1"]["image"],
          enemy_properties["enemy1"]["size"],
-          enemy_properties["enemy1"]["position_x"],
-           enemy_properties["enemy1"]["position_y"],
+          platform_D.position_x + 50,
+           platform_D.position_y - 200,
             enemy_properties["enemy1"]["size"][0],
-            enemy_properties["enemy1"]["size"][1]
+            enemy_properties["enemy1"]["size"][1],
+            enemy_properties["enemy1"]["health"]
             )
 
 
@@ -223,7 +231,8 @@ enemy_3 = Enemy(
           enemy_properties["enemy2"]["position_x"],
            enemy_properties["enemy2"]["position_y"],
             enemy_properties["enemy2"]["size"][0],
-             enemy_properties["enemy2"]["size"][1]
+             enemy_properties["enemy2"]["size"][1],
+             enemy_properties["enemy2"]["health"]
              )
 
 enemy_4 = Enemy(
@@ -232,7 +241,8 @@ enemy_4 = Enemy(
           enemy_properties["enemy4"]["position_x"],
            enemy_properties["enemy4"]["position_y"],
             enemy_properties["enemy4"]["size"][0],
-             enemy_properties["enemy4"]["size"][1]
+             enemy_properties["enemy4"]["size"][1],
+             enemy_properties["enemy4"]["health"]
              )
 
 enemy_5 = Enemy(
@@ -241,7 +251,8 @@ enemy_5 = Enemy(
           enemy_properties["enemy5"]["position_x"],
            enemy_properties["enemy5"]["position_y"],
             enemy_properties["enemy5"]["size"][0],
-             enemy_properties["enemy5"]["size"][1]
+             enemy_properties["enemy5"]["size"][1],
+             enemy_properties["enemy5"]["health"]
              )
 
 hero = Hero(
@@ -264,7 +275,13 @@ all_platforms = [
 
 all_enemies = [
     enemy_1,
+    enemy_1_2,
+    enemy_1_3,
+    enemy_1_4,
     enemy_2,
+    enemy_2_1,
+    enemy_2_2,
+    enemy_2_3,
     enemy_3,
     enemy_4,
     enemy_5
