@@ -33,7 +33,7 @@ class Platforms:
     def lock_to_floor_right(self):
         self.position_x += 10
     
-    def is_in_contact_with_platform(self, character):
+    def is_in_contact_with(self, character):
         self.character = character
 
         if self.platform_rect().colliderect(character.enemy_rect()):

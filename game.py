@@ -43,28 +43,44 @@ while is_runnign:
             if event.key == pygame.K_SPACE:
                 jump = True
 
-    enemy_1.enemy_move_left()
-    enemy_2.enemy_move_left()
-    enemy_3.enemy_move_left()
-    enemy_4.enemy_move_left()
-    enemy_5.enemy_move_right()
-    floor.hide_and_repeat() 
+    # enemy_1.enemy_move_left()
+    # enemy_2.enemy_move_left()
+    # enemy_3.enemy_move_left()
+    # enemy_4.enemy_move_left()
+    # enemy_5.enemy_move_right()
+    background_1.hide_and_repeat()
+    background_2.hide_and_repeat()
+    background_3.hide_and_repeat()
+    floor.hide_and_repeat()  
     floor2.hide_and_repeat()
     floor3.hide_and_repeat()
+    
 
 
  # if the hero is in the platform with the enemuy, the enemy moves towards the hero
 
-    if platform_A.is_in_contact_with_platform(enemy_1_2):
+    if platform_A.is_in_contact_with(enemy_1_2):
         if platform_A.hero_in_contact(hero):
             enemy_1_2.move_towards(hero)
-             
 
+    if platform_B.is_in_contact_with(enemy_1_3):
+        if platform_B.hero_in_contact(hero):
+            enemy_1_3.move_towards(hero)
 
+    if platform_B.is_in_contact_with(enemy_1_4):
+        if platform_B.hero_in_contact(hero):
+            enemy_1_4.move_towards(hero)         
+
+    if platform_C.is_in_contact_with(enemy_2_2):
+        if platform_C.hero_in_contact(hero):
+            enemy_2_2.move_towards(hero)
 
 
     if move_forward == True:
         if hero.position_x > WINDOW_WIDTH // 3:
+            background_1.move_background_forward()
+            background_2.move_background_forward()
+            background_3.move_background_forward()
             floor.move_floor_forward() 
             floor2.move_floor_forward()
             floor3.move_floor_forward()
@@ -75,6 +91,9 @@ while is_runnign:
             platform_E.lock_to_floor_left()
             enemy_5.enemy_move_left()
             enemy_1_2.keep_in_platform()
+            enemy_1_3.keep_in_platform()
+            enemy_1_4.keep_in_platform()
+            enemy_2_2.keep_in_platform()
             #lock the enemy to the plaform
         else:
             hero.hero_move_forward()
@@ -140,16 +159,21 @@ while is_runnign:
 ##############################################################################################################
        
     screen.blit(background, (0,0))
-    background_0.load_background(screen)
+    # background_0.load_background(screen)
+    background_1.load_background(screen)
+    background_2.load_background(screen)
+    background_3.load_background(screen)
     floor.load_background(screen)
     floor2.load_background(screen)
     floor3.load_background(screen)
     enemy_1.load_enemy(screen)
     enemy_1_2.load_enemy(screen)
-    # enemy_1_3.load_enemy(screen)
+    enemy_1_3.load_enemy(screen)
     enemy_2.load_enemy(screen)
     enemy_3.load_enemy(screen)
-    enemy_4.load_enemy(screen) 
+    enemy_1_4.load_enemy(screen)
+    enemy_2_2.load_enemy(screen)
+    # enemy_4.load_enemy(screen) 
     enemy_5.load_enemy(screen)
     flame_obj.load_flame(screen)
     hero.load_hero(screen) 

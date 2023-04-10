@@ -43,49 +43,49 @@ enemy_4_switch = False
 
 background_images = {
     "floor": {
-        "image" : "images/new_floor.png",
+        "image" : "images/better_floor.png",
         "size": (WINDOW_WIDTH, 200),
         "position_x" : 0,
         "position_y": WINDOW_HEIGHT - 200
         },
 
     "floor2": {
-        "image" : "images/new_floor_2.png",
+        "image" : "images/better_floor_2.png",
         "size": (WINDOW_WIDTH, 200),
         "position_x" : WINDOW_WIDTH,
         "position_y": WINDOW_HEIGHT - 200
          },
         
     "floor3": {
-        "image": "images/new_floor_3.png",
+        "image": "images/better_floor_3.png",
         "size": (WINDOW_WIDTH, 200),
         "position_x": WINDOW_WIDTH * 2,
         "position_y": WINDOW_HEIGHT - 200 
     },
 
     "background0": {
-        "image":"images/background_0.png",
+        "image":"images/new_background.png",
         "size": (WINDOW_WIDTH, WINDOW_HEIGHT),
         "position_x": 0,
         "position_y": 0
     },
 
     "background1" : {
-    "image":"images/background_1.png",
+    "image":"images/new_1background.png",
     "size": (WINDOW_WIDTH, WINDOW_HEIGHT),
     "position_x": 0,
     "position_y": 0
     },
 
      "background2" : {
-    "image":"images/background_2.png",
+    "image":"images/new_1background_2.png",
     "size": (WINDOW_WIDTH, WINDOW_HEIGHT),
     "position_x": WINDOW_WIDTH,
     "position_y": 0
     },
 
      "background3" : {
-    "image":"images/background_3.png",
+    "image":"images/new_1background_3.png",
     "size": (WINDOW_WIDTH, WINDOW_HEIGHT),
     "position_x": WINDOW_WIDTH * 2,
     "position_y": 0
@@ -94,35 +94,35 @@ background_images = {
 
 platforms = {
     "platform1" : {
-        "image":"images/platform.png",
+        "image":"images/better-platform.png",
         "size": (250, 75),
         "position_x": WINDOW_WIDTH // 2,
         "position_y": 450,
         
     },
     "platform2" : {
-        "image":"images/platform.png",
-        "size": (250, 75),
+        "image":"images/better-platform.png",
+        "size": (350, 75),
         "position_x": WINDOW_WIDTH,
         "position_y": 300,
         
     },
     "platform3" : {
-        "image":"images/platform.png",
+        "image":"images/better-platform.png",
         "size": (250, 75),
         "position_x": WINDOW_WIDTH + 550,
         "position_y": 250,
         
     },
     "platform4" : {
-        "image":"images/platform.png",
+        "image":"images/better-platform.png",
         "size": (250, 75),
         "position_x": WINDOW_WIDTH * 2,
         "position_y": 300,
         
     },
     "platform5" : {
-        "image":"images/platform.png",
+        "image":"images/better-platform.png",
         "size": (250, 75),
         "position_x": WINDOW_WIDTH * 2.5,
         "position_y": 200,
@@ -164,7 +164,7 @@ enemy_properties = {
     },
 
     "enemy5": {
-        "image": "images/impostor.png",
+        "image": "images/new_enemy_5.png",
         "size": (200,200),
         "position_x": 600,
         "position_y": WINDOW_HEIGHT - 200,
@@ -178,7 +178,7 @@ enemy_properties = {
 hero_properties = {
 
     "hero" : {
-        "image" : "images/new_hero.png",
+        "image" : "images/latest_hero.png",
         "size" : (125, 200),
         "position_x" : WINDOW_WIDTH // 3,
         "position_y" : WINDOW_HEIGHT - 200
@@ -339,8 +339,8 @@ enemy_1 = Enemy(
 enemy_1_2 = Enemy(
         enemy_properties["enemy0"]["image"],
          enemy_properties["enemy0"]["size"],
-          platforms["platform1"]["position_x"],
-           platforms["platform1"]["position_y"] - 70,
+          platform_A.position_x,
+           platform_A.position_y - 70,
             enemy_properties["enemy0"]["size"][0],
              enemy_properties["enemy0"]["size"][1]
              )
@@ -348,8 +348,8 @@ enemy_1_2 = Enemy(
 enemy_1_3 = Enemy(
         enemy_properties["enemy0"]["image"],
          enemy_properties["enemy0"]["size"],
-          enemy_properties["enemy0"]["position_x"],
-           enemy_properties["enemy0"]["position_y"],
+          platform_B.position_x,
+           platform_B.position_y - 70, 
             enemy_properties["enemy0"]["size"][0],
              enemy_properties["enemy0"]["size"][1]
              )
@@ -357,8 +357,8 @@ enemy_1_3 = Enemy(
 enemy_1_4 = Enemy(
         enemy_properties["enemy0"]["image"],
          enemy_properties["enemy0"]["size"],
-          enemy_properties["enemy0"]["position_x"],
-           enemy_properties["enemy0"]["position_y"],
+          platform_B.position_x + 30,
+           platform_B.position_y - 80,
             enemy_properties["enemy0"]["size"][0],
              enemy_properties["enemy0"]["size"][1]
              )
@@ -373,6 +373,35 @@ enemy_2 = Enemy(
             enemy_properties["enemy1"]["size"][0],
             enemy_properties["enemy1"]["size"][1]
             )
+
+enemy_2_1 = Enemy(
+        enemy_properties["enemy1"]["image"],
+         enemy_properties["enemy1"]["size"],
+          enemy_properties["enemy1"]["position_x"],
+           enemy_properties["enemy1"]["position_y"],
+            enemy_properties["enemy1"]["size"][0],
+            enemy_properties["enemy1"]["size"][1]
+            )
+
+enemy_2_2 = Enemy(
+        enemy_properties["enemy1"]["image"],
+         enemy_properties["enemy1"]["size"],
+          platform_C.position_x + 30,
+           platform_C.position_y - 150,
+            enemy_properties["enemy1"]["size"][0],
+            enemy_properties["enemy1"]["size"][1]
+            )
+
+enemy_2_3 = Enemy(
+        enemy_properties["enemy1"]["image"],
+         enemy_properties["enemy1"]["size"],
+          enemy_properties["enemy1"]["position_x"],
+           enemy_properties["enemy1"]["position_y"],
+            enemy_properties["enemy1"]["size"][0],
+            enemy_properties["enemy1"]["size"][1]
+            )
+
+
 enemy_3 = Enemy(
         enemy_properties["enemy2"]["image"],
          enemy_properties["enemy2"]["size"],

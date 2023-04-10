@@ -105,7 +105,7 @@ class Flame(Hero):
 
 
     def shoot_flame(self):
-        self.position_xf += 20
+        self.position_xf += 75
 
     def flame_enemy_collide(self, enemy):
         self.enemy = enemy

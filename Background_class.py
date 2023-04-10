@@ -36,10 +36,10 @@ class Background:
         return self.position_x
     
     def move_background_forward(self):
-        self.position_x += 2
+        self.position_x -= 2
     
     def move_background_backwards(self):
-        self.position_x -= 2
+        self.position_x += 2
     
     def hide_and_repeat(self):
         if self.position_x == - self.WW:
