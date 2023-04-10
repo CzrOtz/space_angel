@@ -87,56 +87,56 @@ floor3 = Background(
     )
 
 platform_A = Platforms(
-    platforms["platform1"]['image'],
-    platforms["platform1"]["size"],
-    platforms["platform1"]["position_x"],
-    platforms["platform1"]['position_y'],
-    platforms["platform1"]["size"][0],
-    platforms["platform1"]["size"][1],
+    platforms["platformA"]['image'],
+    platforms["platformA"]["size"],
+    platforms["platformA"]["position_x"],
+    platforms["platformA"]['position_y'],
+    platforms["platformA"]["size"][0],
+    platforms["platformA"]["size"][1],
     WINDOW_WIDTH,
     WINDOW_HEIGHT
 )
 
 platform_B = Platforms(
-    platforms["platform2"]['image'],
-    platforms["platform2"]["size"],
-    platforms["platform2"]["position_x"],
-    platforms["platform2"]['position_y'],
-    platforms["platform2"]["size"][0],
-    platforms["platform2"]["size"][1],
+    platforms["platformB"]['image'],
+    platforms["platformB"]["size"],
+    platforms["platformB"]["position_x"],
+    platforms["platformB"]['position_y'],
+    platforms["platformB"]["size"][0],
+    platforms["platformB"]["size"][1],
     WINDOW_WIDTH,
     WINDOW_HEIGHT
 )
 
 platform_C = Platforms(
-    platforms["platform3"]['image'],
-    platforms["platform3"]["size"],
-    platforms["platform3"]["position_x"],
-    platforms["platform3"]['position_y'],
-    platforms["platform3"]["size"][0],
-    platforms["platform3"]["size"][1],
+    platforms["platformC"]['image'],
+    platforms["platformC"]["size"],
+    platforms["platformC"]["position_x"],
+    platforms["platformC"]['position_y'],
+    platforms["platformC"]["size"][0],
+    platforms["platformC"]["size"][1],
     WINDOW_WIDTH,
     WINDOW_HEIGHT
 )
 
 platform_D = Platforms(
-    platforms["platform4"]['image'],
-    platforms["platform4"]["size"],
-    platforms["platform4"]["position_x"],
-    platforms["platform4"]['position_y'],
-    platforms["platform4"]["size"][0],
-    platforms["platform4"]["size"][1],
+    platforms["platformD"]['image'],
+    platforms["platformD"]["size"],
+    platforms["platformD"]["position_x"],
+    platforms["platformD"]['position_y'],
+    platforms["platformD"]["size"][0],
+    platforms["platformD"]["size"][1],
     WINDOW_WIDTH,
     WINDOW_HEIGHT
 )
 
 platform_E = Platforms(
-    platforms["platform5"]['image'],
-    platforms["platform5"]["size"],
-    platforms["platform5"]["position_x"],
-    platforms["platform5"]['position_y'],
-    platforms["platform5"]["size"][0],
-    platforms["platform5"]["size"][1],
+    platforms["platformE"]['image'],
+    platforms["platformE"]["size"],
+    platforms["platformE"]["position_x"],
+    platforms["platformE"]['position_y'],
+    platforms["platformE"]["size"][0],
+    platforms["platformE"]["size"][1],
     WINDOW_WIDTH,
     WINDOW_HEIGHT
 )
@@ -155,7 +155,7 @@ enemy_1 = Enemy(
 enemy_1_2 = Enemy(
         enemy_properties["enemy0"]["image"],
          enemy_properties["enemy0"]["size"],
-          platform_A.position_x,
+          platform_A.position_x + 150,
            platform_A.position_y - 70,
             enemy_properties["enemy0"]["size"][0],
              enemy_properties["enemy0"]["size"][1],
@@ -175,7 +175,7 @@ enemy_1_3 = Enemy(
 enemy_1_4 = Enemy(
         enemy_properties["enemy0"]["image"],
          enemy_properties["enemy0"]["size"],
-          platform_B.position_x + 30,
+          platform_B.position_x + 250,
            platform_B.position_y - 80,
             enemy_properties["enemy0"]["size"][0],
              enemy_properties["enemy0"]["size"][1],

@@ -15,6 +15,7 @@ class Enemy:
         self.startign_position = 0
         self.hero = None
         self.health = health
+        self.platform = None
         
 
 
@@ -70,6 +71,26 @@ class Enemy:
 
     def keep_in_platform(self):
         self.position_x -= 10
+
+    
+    def in_contact_with(self, platform):
+        self.platform = platform
+
+        if self.enemy_rect().colliderect(platform.platform_rect()):
+            return True
+        else:
+            return False
+            
+
+
+    # def is_in_contact_with(self, character):
+    #     self.character = character
+
+    #     if self.platform_rect().colliderect(character.enemy_rect()):
+    #         return True
+        
+    #     else: 
+    #         return False
 
         
     

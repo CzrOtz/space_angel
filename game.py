@@ -6,7 +6,7 @@ pygame.init()
 
 on_platform = None
 
-last_y_position = [500,500]
+
 
 can_fall = False
 
@@ -43,11 +43,11 @@ while is_runnign:
             if event.key == pygame.K_SPACE:
                 jump = True
 
-    # enemy_1.enemy_move_left()
-    # enemy_2.enemy_move_left()
-    # enemy_3.enemy_move_left()
-    # enemy_4.enemy_move_left()
-    # enemy_5.enemy_move_right()
+    enemy_1.enemy_move_left()
+    enemy_2.enemy_move_left()
+    enemy_3.enemy_move_left()
+    enemy_4.enemy_move_left()
+    enemy_5.enemy_move_right()
     background_1.hide_and_repeat()
     background_2.hide_and_repeat()
     background_3.hide_and_repeat()
@@ -57,7 +57,7 @@ while is_runnign:
     
 
 
- # if the hero is in the platform with the enemuy, the enemy moves towards the hero
+ # if the hero is in the platform with the enemy, the enemy moves towards the hero
 
     if platform_A.is_in_contact_with(enemy_1_2):
         if platform_A.hero_in_contact(hero):
@@ -76,7 +76,7 @@ while is_runnign:
             enemy_2_2.move_towards(hero)
 
     
-
+################# Move back and forward #######
 
     if move_forward == True:
         if hero.position_x > WINDOW_WIDTH // 3:
@@ -108,7 +108,7 @@ while is_runnign:
     if not shoot: 
         flame_obj.position_xf = hero.position_x + 70 
         flame_obj.position_yf = hero.position_y + 70 
-
+##########################################################  
 
 #################shoot and enemy hit logic###################
     if shoot:
@@ -117,14 +117,15 @@ while is_runnign:
             shoot = False
         
         for enemies in all_enemies:
-            if flame_obj.flame_enemy_collide(enemies):
-                enemies.position_x += 15
+            if flame_obj.flame_enemy_collide(enemies) and enemies != enemy_5:
+                
                 enemies.health -= 2.5
-                print(enemy_1_2.health, ' first enemy health')
-                print(enemy_1_3.health, ' second enemy health')
+                enemies.position_x += 2
+
                 if enemies.health <= 0:
                     enemies.position_y += WINDOW_HEIGHT
-                
+
+
 
 
    

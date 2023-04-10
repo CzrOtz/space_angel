@@ -84,35 +84,35 @@ background_images = {
 }
 
 platforms = {
-    "platform1" : {
+    "platformA" : {
         "image":"images/better-platform.png",
         "size": (250, 75),
         "position_x": WINDOW_WIDTH // 2,
         "position_y": 450,
         
     },
-    "platform2" : {
+    "platformB" : {
         "image":"images/better-platform.png",
-        "size": (350, 75),
+        "size": (450, 75),
         "position_x": WINDOW_WIDTH,
         "position_y": 300,
         
     },
-    "platform3" : {
+    "platformC" : {
         "image":"images/better-platform.png",
         "size": (250, 75),
         "position_x": WINDOW_WIDTH + 550,
         "position_y": 250,
         
     },
-    "platform4" : {
+    "platformD" : {
         "image":"images/better-platform.png",
         "size": (250, 75),
         "position_x": WINDOW_WIDTH * 2,
         "position_y": 300,
         
     },
-    "platform5" : {
+    "platformE" : {
         "image":"images/better-platform.png",
         "size": (250, 75),
         "position_x": WINDOW_WIDTH * 2.5,
