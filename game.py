@@ -1,6 +1,6 @@
 import pygame
-from game_variables import *
-import random
+from game_objects import *
+
 
 pygame.init()
 
