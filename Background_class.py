@@ -22,7 +22,7 @@ class Background:
 
         return self.surface_to_be_rendered.blit(image2, image_rect)
 
-    def background_rect(self):
+    def rect(self):
         image_rect = pygame.Rect(self.position_x, self.position_y, self.rect_width, self.rect_height)
         return image_rect
 

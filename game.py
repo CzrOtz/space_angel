@@ -120,16 +120,21 @@ while is_runnign:
             if flame_obj.flame_enemy_collide(enemies) and enemies != enemy_5:
                 
                 enemies.health -= 2.5
-                enemies.position_x += 2
+                enemies.position_x += 15
 
                 if enemies.health <= 0:
                     enemies.position_y += WINDOW_HEIGHT
+                
+                        
+    for enemy in all_enemies:
+        if hero.in_contact_with(enemy):
+            print('damage')
 
 
 
 
    
-
+    
         
  
 ################################################################################################################
@@ -195,7 +200,7 @@ while is_runnign:
     enemy_1_4.load_enemy(screen)
     enemy_2_2.load_enemy(screen)
     enemy_2_3.load_enemy(screen)
-    # enemy_4.load_enemy(screen) 
+    enemy_4.load_enemy(screen) 
     enemy_5.load_enemy(screen)
     flame_obj.load_flame(screen)
     hero.load_hero(screen) 

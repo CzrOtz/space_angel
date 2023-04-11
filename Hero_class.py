@@ -1,7 +1,7 @@
 import pygame
 
 class Hero: 
-    def __init__(self, hero_image, size_of_hero, position_x, position_y, rect_width, rect_heigh):
+    def __init__(self, hero_image, size_of_hero, position_x, position_y, rect_width, rect_heigh, health):
         self.hero_image = hero_image
         self.size_of_hero = size_of_hero
         self.position_x = position_x
@@ -16,6 +16,8 @@ class Hero:
         self.platform = None
         self.fall_velocity = 1
         self.enemy = None
+        self.object = None
+        self.health = health
         
     def load_hero(self, surface_to_be_rendered):
         image = pygame.image.load(self.hero_image)
@@ -25,7 +27,7 @@ class Hero:
 
         return self.surface_to_be_rendered.blit(image2, image_rect)
     
-    def hero_rect(self):
+    def rect(self):
         image_rect = pygame.Rect(self.position_x, self.position_y, self.rect_width, self.rect_height)
         return image_rect
         
@@ -39,7 +41,7 @@ class Hero:
     def is_hero_on_a_platform(self, platform):
         self.platform = platform
 
-        if self.hero_rect().colliderect(platform.platform_rect()) and self.position_y + 50 < platform.position_y:
+        if self.rect().colliderect(platform.rect()) and self.position_y + 50 < platform.position_y:
             return True
         else:
             return False
@@ -73,7 +75,15 @@ class Hero:
     def hero_got_hit(self, enemy):
         self.enemy = enemy
 
-        if self.hero_rect().colliderect(enemy.enemy_rect()):
+        if self.rect().colliderect(enemy.rect()):
+            return True
+        else:
+            return False
+    
+    def in_contact_with(self, object):
+        self.object = object
+
+        if self.rect().colliderect(object.rect()):
             return True
         else:
             return False
@@ -98,19 +108,19 @@ class Flame(Hero):
 
         return self.surface_to_be_rendered.blit(image2, image_rect)
     
-    def flame_rect(self):
+    def rect(self):
         image_rect = pygame.Rect(self.position_xf, self.position_yf, self.size_of_image[0], self.size_of_image[1])
         return image_rect
 
 
 
     def shoot_flame(self):
-        self.position_xf += 100
+        self.position_xf += 120
 
     def flame_enemy_collide(self, enemy):
         self.enemy = enemy
 
-        if self.flame_rect().colliderect(enemy.enemy_rect()):
+        if self.rect().colliderect(enemy.rect()):
             return True
         else:
             return False

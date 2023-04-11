@@ -15,7 +15,7 @@ class Enemy:
         self.startign_position = 0
         self.hero = None
         self.health = health
-        self.platform = None
+        self.object = None
         
 
 
@@ -33,7 +33,7 @@ class Enemy:
 
         
     
-    def enemy_rect(self):
+    def rect(self):
         image_rect = pygame.Rect(self.position_x, self.position_y, self.rect_width, self.rect_heigth)
         return image_rect
 
@@ -55,7 +55,7 @@ class Enemy:
     def enemy_got_hit_flame(self, flame):
         self.flame = flame
 
-        if self.enemy_rect().colliderect(flame.flame_rect()):
+        if self.rect().colliderect(flame.rect()):
             return True
         else:
             return False
@@ -73,10 +73,10 @@ class Enemy:
         self.position_x -= 10
 
     
-    def in_contact_with(self, platform):
-        self.platform = platform
+    def in_contact_with(self, object):
+        self.object = object
 
-        if self.enemy_rect().colliderect(platform.platform_rect()):
+        if self.rect().colliderect(object.rect()):
             return True
         else:
             return False

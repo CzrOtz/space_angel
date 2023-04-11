@@ -177,7 +177,8 @@ hero_properties = {
         "image" : "images/latest_hero.png",
         "size" : (125, 200),
         "position_x" : WINDOW_WIDTH // 3,
-        "position_y" : WINDOW_HEIGHT - 200
+        "position_y" : WINDOW_HEIGHT - 200,
+        "health": 100
     }
     
 }

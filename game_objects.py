@@ -261,7 +261,8 @@ hero = Hero(
       hero_properties["hero"]["position_x"],
        hero_properties["hero"]["position_y"],
         hero_properties["hero"]["size"][0],
-         hero_properties["hero"]["size"][1]
+         hero_properties["hero"]["size"][1],
+         hero_properties["hero"]["health"]
     )
 
 all_platforms = [
